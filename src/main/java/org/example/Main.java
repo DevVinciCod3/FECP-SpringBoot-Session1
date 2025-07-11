@@ -28,7 +28,8 @@ public class Main {
             System.out.print("Enter your age: ");
             int age = s.nextInt();
             age_category(age);
-            System.out.println("Ticket Price: %d");
+            age_price(age);
+
 
         }else{
             System.out.println("Hope you visit us again next time!");
@@ -47,6 +48,20 @@ public class Main {
             System.out.println("Please enter a valid age.");
         }
     }
+    public static void age_price(int age){
+        if (age >= 60){
+            System.out.println("Ticket Price: ₱50");
+        } else if (age >= 18){
+            System.out.println("Ticket Price: ₱150");
+        } else if (age >= 6) {
+            System.out.println("Ticket Price: ₱75");
+        } else if (age >= 0) {
+            System.out.println("Ticket Price: ₱0");
+        }else{
+            System.exit(0);
+        }
+    }
+
 
 
 
