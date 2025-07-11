@@ -29,12 +29,20 @@ public class Main {
             int age = s.nextInt();
             age_category(age);
             age_price(age);
-
-
+            System.out.println("Proceed with purchase? (yes/no): ");
+            String purchase_choice = s.next().toLowerCase();
+            if (purchase_choice.equals("yes")){
+                ticket_purchase();
+            }else{
+                System.out.println("Hope you visit us again next time!");
+            }
         }else{
             System.out.println("Hope you visit us again next time!");
         }
     }
+
+
+
     public static void age_category(int age){
         if (age >= 60){
             System.out.println("You qualify for a SENIOR ticket");
@@ -61,7 +69,14 @@ public class Main {
             System.exit(0);
         }
     }
-
+    public static void ticket_purchase(){
+        System.out.println("Ticket Purchased!");
+        int min = 1000;
+        int max = 9999;
+        int ticket_code = (int) (Math.random() * (max - min + 1)) + min;
+        System.out.printf("Your ticket code is: ZOO-%d",ticket_code);
+        System.out.println("[Ticket added to the system]");
+    }
 
 
 
