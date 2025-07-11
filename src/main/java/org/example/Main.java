@@ -1,17 +1,53 @@
 package org.example;
+import java.util.*;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner s = new Scanner(System.in);
+        float price=0f;
+        System.out.println("=== WELCOME TO THE ZOO TICKETING SHOP ===");
+        System.out.println("Here's what you can experience at the zoo:");
+        System.out.println("Visit animal enclosures (Elephant, Lion, Owl)");
+        System.out.println("Buy snacks and drinks from our Shops");
+        System.out.println("Listen to science lectures at the hospital");
+        System.out.println("Buy fun gifts at our gift shop");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        System.out.print("Would you like to buy a ticket? (yes/no):");
+        String ticket_choice = s.nextLine().toLowerCase();
+        buy_ticket(s, ticket_choice);
+
+
+
+//        System.out.printf("Price: $%.2f%n",price);
+    }
+
+    public static void buy_ticket(Scanner s, String ticket_choice){
+        if (ticket_choice.equals("yes")){
+            System.out.print("Enter your name: ");
+            String name = s.next();
+            System.out.print("Enter your age: ");
+            int age = s.nextInt();
+            age_category(age);
+            System.out.println("Ticket Price: %d");
+
+        }else{
+            System.out.println("Hope you visit us again next time!");
         }
     }
+    public static void age_category(int age){
+        if (age >= 60){
+            System.out.println("You qualify for a SENIOR ticket");
+        } else if (age >= 18){
+            System.out.println("You qualify for a ADULT ticket");
+        } else if (age >= 6) {
+            System.out.println("You qualify for a STUDENT ticket");
+        } else if (age >= 0) {
+            System.out.println("You qualify for a CHILD ticket");
+        }else{
+            System.out.println("Please enter a valid age.");
+        }
+    }
+
+
+
 }
