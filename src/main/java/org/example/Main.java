@@ -1,6 +1,8 @@
 package org.example;
 import java.util.*;
-
+// add hashmap for tickets and people
+//refactor code to choose to make another ticket purchase
+//refactor code to not hardcode price and age category
 public class Main {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
@@ -16,9 +18,6 @@ public class Main {
         String ticket_choice = s.nextLine().toLowerCase();
         buy_ticket(s, ticket_choice);
 
-
-
-//        System.out.printf("Price: $%.2f%n",price);
     }
 
     public static void buy_ticket(Scanner s, String ticket_choice){
