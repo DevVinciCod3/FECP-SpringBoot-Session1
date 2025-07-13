@@ -17,9 +17,9 @@ public class zooShop {
         System.out.println("=== Zoo Shop ===");
         System.out.println("\nAvailable Products:");
 
-        for (int i = 0; i < products.size(); i++) {
-            product p = products.get(i);
-            System.out.printf("%d. %s - $%d%n", i + 1, p.getName(), p.getPrice());
+        int count = 1;
+        for (product p : products) {
+            System.out.printf("%d. %s - $%d%n", count++, p.getName(), p.getPrice());
         }
 
         System.out.print("Enter the number of the product you want to buy: ");

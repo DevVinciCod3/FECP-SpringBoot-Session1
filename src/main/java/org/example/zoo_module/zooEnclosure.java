@@ -11,12 +11,12 @@ public class zooEnclosure {
 
     public static void run(Scanner s) {
 
-        System.out.println("=== Zoo Enclosure ===");
+        System.out.println("=== Zoo Enclosure ===\n");
 
-        System.out.println("\nChoose Enclosure");
         System.out.println("1. Pachyderm (rhino, elephant, hippo)");
         System.out.println("2. Feline (tiger, lion, cheetah)");
         System.out.println("3. Bird (parrot, falcon, owl)");
+        System.out.print("Choose Enclosure: ");
         int option = s.nextInt();
         s.nextLine();
 
@@ -28,7 +28,7 @@ public class zooEnclosure {
                 System.out.println("1. Feed rhino");
                 System.out.println("2. Feed elephant");
                 System.out.println("3. Feed hippo");
-                System.out.println("Choose Animal to Feed");
+                System.out.print("Choose Animal to Feed: ");
                 int choice = s.nextInt();
                 s.nextLine();
 
@@ -45,7 +45,7 @@ public class zooEnclosure {
                 System.out.println("1. Feed tiger");
                 System.out.println("2. Feed lion");
                 System.out.println("3. Feed cheetah");
-                System.out.println("Choose Animal to Feed");
+                System.out.print("Choose Animal to Feed: ");
                 int choice = s.nextInt();
                 s.nextLine();
 
@@ -62,7 +62,7 @@ public class zooEnclosure {
                 System.out.println("1. Feed parrot");
                 System.out.println("2. Feed falcon");
                 System.out.println("3. Feed owl");
-                System.out.print("Choose Animal to Feed");
+                System.out.print("Choose Animal to Feed: ");
                 int choice = s.nextInt();
                 s.nextLine();
 

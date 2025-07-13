@@ -1,5 +1,6 @@
 package org.example.zoo_module;
 
+import org.example.zoo_module.zooHospital.zooHospital;
 import org.example.zoo_module.zooshop.zooShop;
 
 import java.util.Scanner;
@@ -20,7 +21,7 @@ public class zooModule {
                 System.out.println("4. Leave Zoo");
                 firstTime = false;
             } else {
-                System.out.println("What would you like to do next?");
+                System.out.println("\nWhat would you like to do next?");
             }
 
             System.out.print("Choose an option: ");
