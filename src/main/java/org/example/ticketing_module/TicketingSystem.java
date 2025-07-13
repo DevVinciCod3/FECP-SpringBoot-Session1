@@ -1,4 +1,4 @@
-package org.example;
+package org.example.ticketing_module;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -75,7 +75,6 @@ public class TicketingSystem {
         int min = 1000;
         int max = 9999;
         int ticket_number = (int) (Math.random() * (max - min + 1)) + min;
-        // Return ONLY the code
         return "ZOO-" + ticket_number;
     }
 

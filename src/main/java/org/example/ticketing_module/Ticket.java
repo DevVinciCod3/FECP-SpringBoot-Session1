@@ -1,4 +1,4 @@
-package org.example;
+package org.example.ticketing_module;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -28,7 +28,7 @@ public class Ticket {
             return Arrays.stream(TicketType.values())
                     .filter(type -> age >= type.minAge)
                     .max(Comparator.comparingInt(type -> type.minAge))
-                    .orElse(CHILD); // Default to CHILD if something goes wrong
+                    .orElse(CHILD);
         }
     }
 
@@ -52,8 +52,8 @@ public class Ticket {
     public void displayTicket() {
         System.out.println("Ticket Code: " + this.ticketCode);
         System.out.println("Visitor Name: " + this.visitorName);
-        System.out.println("Category: " + this.ticketType.label); // Get label from the enum
-        System.out.printf("Price: $%.2f\n", this.ticketType.price); // Get price from the enum and format it
+        System.out.println("Category: " + this.ticketType.label);
+        System.out.printf("Price: $%.2f\n", this.ticketType.price);
     }
 
     public String getVisitorName() {

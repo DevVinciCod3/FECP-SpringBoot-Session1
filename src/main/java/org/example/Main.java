@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.admin_module.Handler_Module;
+import org.example.admin_module.Zoo_Staff;
+import org.example.ticketing_module.TicketingModule;
+
 import java.util.Scanner;
 
 public class Main {
@@ -27,25 +31,33 @@ public class Main {
         while (isRunning) {
             System.out.println("========== ZOO ADMIN MAIN MENU ==========");
             System.out.println("""
-                    1. Setup Zoo Staff
-                    2. Access Handler Module
-                    3. Open Zoo to Visitors
-                    4. Close Zoo to Visitors
-                    5. Exit
-                    """);
+            1. Setup Zoo Staff
+            2. Access Handler Module
+            3. Open Zoo to Visitors
+            4. Close Zoo to Visitors
+            """);
             System.out.print("Choose an option: ");
             int option = sc.nextInt();
             sc.nextLine();
 
             switch (option) {
                 case 1 -> setupZooStaff();
-                case 2 -> Handler_Module.accessModule(sc, zooStaff);
-                case 3 -> {
-                    System.out.println("Zoo is now OPEN to visitors!");
-                    TicketingModule.run();
+                case 2 -> {
+                    if (isStaffSetup()) {
+                        System.out.println("You must set up Zoo Staff first.");
+                    } else {
+                        Handler_Module.accessModule(sc, zooStaff);
+                    }
                 }
-                case 4 -> System.out.println("Zoo is now CLOSED to visitors.");
-                case 5 -> {
+                case 3 -> {
+                    if (isStaffSetup()) {
+                        System.out.println("You must set up Zoo Staff first.");
+                    } else {
+                        System.out.println("Zoo is now OPEN to visitors!");
+                        TicketingModule.run();
+                    }
+                }
+                case 4 -> {
                     System.out.println("Exiting admin console. Goodbye!");
                     isRunning = false;
                 }
@@ -53,6 +65,17 @@ public class Main {
             }
         }
 
+
+    }
+
+    private static boolean isStaffSetup() {
+        return zooStaff.getManager() == null ||
+                zooStaff.getVeterinarian() == null ||
+                zooStaff.getPachydermHandler() == null ||
+                zooStaff.getFelineHandler() == null ||
+                zooStaff.getBirdHandler() == null ||
+                zooStaff.getTicketVendor() == null ||
+                zooStaff.getShopVendor() == null;
     }
 
     private static void setupZooStaff() {

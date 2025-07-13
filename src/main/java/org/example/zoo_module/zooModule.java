@@ -27,7 +27,7 @@ public class zooModule {
             System.out.print("Choose an option: ");
 
             int option = s.nextInt();
-            s.nextLine(); // consume newline
+            s.nextLine();
 
             switch (option){
                 case 1 -> zooEnclosure.run(s);
@@ -36,6 +36,7 @@ public class zooModule {
                 case 4 -> {
                     System.out.println("Thank you, come again!");
                     active = false;
+                    System.exit(0);
                 }
                 default -> System.out.println("Invalid option. Try again.");
             }

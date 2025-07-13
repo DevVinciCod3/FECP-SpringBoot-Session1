@@ -1,21 +1,23 @@
 package org.example.zoo_module.zooHospital;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 
 public class zooHospital {
 
-    private static final List<SickAnimals> sickAnimals = List.of(
-            new SickAnimals("Dumbo"),
-            new SickAnimals("Simba")
+    private static final List<SickAnimals> sickAnimals = new ArrayList<>(
+            List.of(
+                    new SickAnimals("Jumbo"),
+                    new SickAnimals("Scar")
+            )
     );
-
     private static final Map<String, String> healedAnimals = new LinkedHashMap<>();
+
+    public static void admitSickAnimal(String name) {
+        sickAnimals.add(new SickAnimals(name));
+    }
 
     public static void run(Scanner s) {
         System.out.println("\n1. View Sick Animals");

@@ -1,25 +1,26 @@
-package org.example;
+package org.example.admin_module;
 
 import org.example.animals.*;
-import org.example.animals.types.bird.Parrot;
-import org.example.animals.types.feline.Lion;
-import org.example.animals.types.pachyderm.Elephant;
+import org.example.animals.types.bird.*;
+import org.example.animals.types.feline.*;
+import org.example.animals.types.pachyderm.*;
+import org.example.zoo_module.zooHospital.zooHospital;
 
 import java.time.LocalDateTime;
 import java.util.*;
 
 public class Handler_Module {
     private static final List<Animal> pachyderms = List.of(
-            new Elephant("Dumbo"),
-            new Elephant("Horton")
+            new elephant(),
+            new hippo()
     );
     private static final List<Animal> felines = List.of(
-            new Lion("Mufasa"),
-            new Lion("Simba")
+            new lion(),
+            new cheetah()
     );
     private static final List<Animal> birds = List.of(
-            new Parrot("Polly"),
-            new Parrot("Zazu")
+            new parrot(),
+            new owl()
     );
 
     public static void accessModule(Scanner sc, Zoo_Staff zooStaff) {
@@ -73,6 +74,7 @@ public class Handler_Module {
                 case 2 -> selected.roam();
                 case 3 -> {
                     selected.sendToHospital();
+                    zooHospital.admitSickAnimal(selected.getName());
                     System.out.println(selected.getName() + " admitted at " + LocalDateTime.now());
                 }
                 default -> System.out.println("Invalid action.");

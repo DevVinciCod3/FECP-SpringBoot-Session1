@@ -1,4 +1,4 @@
-package org.example;
+package org.example.ticketing_module;
 
 import java.util.Scanner;
 public class TicketingModule {
@@ -23,7 +23,7 @@ public class TicketingModule {
 
             switch (choice) {
                 case 1:
-                    zooTicketingSystem.start(); // user can return to main after finishing this
+                    zooTicketingSystem.start();
                     break;
                 case 2:
                     VisitorEntry zooVisitorEntry = new VisitorEntry(zooTicketingSystem.getTickets());

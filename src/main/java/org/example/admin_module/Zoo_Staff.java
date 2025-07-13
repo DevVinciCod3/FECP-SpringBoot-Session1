@@ -1,4 +1,6 @@
-package org.example;
+package org.example.admin_module;
+
+import org.example.ticketing_module.VisitorEntry;
 
 public class Zoo_Staff {
     private String manager, veterinarian;
@@ -16,4 +18,9 @@ public class Zoo_Staff {
     public String getFelineHandler() { return felineHandler; }
     public String getPachydermHandler() { return pachydermHandler; }
     public String getBirdHandler() { return birdHandler; }
-}
+    public String getManager() {return manager;}
+    public String getVeterinarian(){return veterinarian;}
+    public String getTicketVendor(){return ticketVendor;}
+    public String getShopVendor(){return shopVendor;}
+    }
+

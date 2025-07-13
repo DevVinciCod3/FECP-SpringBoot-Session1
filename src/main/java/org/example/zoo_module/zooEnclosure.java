@@ -1,9 +1,9 @@
 package org.example.zoo_module;
 
-import org.example.zoo_module.zoo_animal.zooAnimals;
-import org.example.zoo_module.zoo_animal.feline.*;
-import org.example.zoo_module.zoo_animal.pachyderm.*;
-import org.example.zoo_module.zoo_animal.bird.*;
+import org.example.animals.Animal;
+import org.example.animals.types.feline.*;
+import org.example.animals.types.pachyderm.*;
+import org.example.animals.types.bird.*;
 
 import java.util.Scanner;
 
@@ -20,7 +20,7 @@ public class zooEnclosure {
         int option = s.nextInt();
         s.nextLine();
 
-        zooAnimals animal = null;
+        Animal animal = null;
 
         switch (option) {
             case 1 -> {
@@ -79,8 +79,8 @@ public class zooEnclosure {
 
         if (animal != null) {
             System.out.println("\nYou chose to feed the " + animal.getName());
-            System.out.println(animal.getName() + " is eating " + animal.feed());
-            System.out.println(animal.getName() + " says " + animal.makeSound());
+            System.out.println(animal.getName() + " is eating " + animal.getFood());
+            System.out.println(animal.getName() + " says " + animal.getSound());
         } else {
             System.out.println("Invalid animal choice.");
         }
