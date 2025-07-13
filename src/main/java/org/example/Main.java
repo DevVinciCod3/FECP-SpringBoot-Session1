@@ -52,6 +52,7 @@ public class Main {
                 default -> System.out.println("Invalid Option.");
             }
         }
+
     }
 
     private static void setupZooStaff() {
