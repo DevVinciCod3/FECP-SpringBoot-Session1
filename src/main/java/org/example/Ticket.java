@@ -5,8 +5,6 @@ import java.util.Comparator;
 
 public class Ticket {
 
-
-
     public enum TicketType {
         CHILD("Child", 0, 0.0f),
         STUDENT("Student", 6, 75.0f),
