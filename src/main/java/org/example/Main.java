@@ -40,7 +40,10 @@ public class Main {
             switch (option) {
                 case 1 -> setupZooStaff();
                 case 2 -> Handler_Module.accessModule(sc, zooStaff);
-                case 3 -> System.out.println("Zoo is now OPEN to visitors!");
+                case 3 -> {
+                    System.out.println("Zoo is now OPEN to visitors!");
+                    TicketingModule.run();
+                }
                 case 4 -> System.out.println("Zoo is now CLOSED to visitors.");
                 case 5 -> {
                     System.out.println("Exiting admin console. Goodbye!");

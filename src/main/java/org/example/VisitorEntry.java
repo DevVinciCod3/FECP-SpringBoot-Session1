@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class VisitorEntry {
     Scanner s = new Scanner(System.in);
-    private Map<String, Ticket> tickets;
+    private final Map<String, Ticket> tickets;
 
     public VisitorEntry(Map<String, Ticket> tickets) {
         this.tickets = tickets;
@@ -26,4 +26,6 @@ public class VisitorEntry {
             System.out.println("Access Denied. Ticket code not found in the system.");
         }
     }
+
+
 }
